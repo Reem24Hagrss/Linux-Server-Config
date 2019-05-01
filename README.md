@@ -146,6 +146,6 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
  * Restart Apache Server
   > `sudo service apache2 restart`
   ## References :
-  > * [AWS Lightsail](https://lightsail.aws.amazon.com)
-  > * [SSH: How to access a remote server and edit files](https://www.youtube.com/watch?v=HcwK8IWc-a8)
-  > * [Deploying a Flask App with Heroku](https://www.youtube.com/watch?v=5UNAy4GzQ5E)
+  * [AWS Lightsail](https://lightsail.aws.amazon.com)
+  * [SSH: How to access a remote server and edit files](https://www.youtube.com/watch?v=HcwK8IWc-a8)
+  * [Deploying a Flask App with Heroku](https://www.youtube.com/watch?v=5UNAy4GzQ5E)
