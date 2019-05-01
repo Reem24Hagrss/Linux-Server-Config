@@ -8,7 +8,8 @@ By the end of this project, you will have one of your web applications running l
 In this project, you’ll be responsible for turning a brand-new, bare bones, Linux server into the secure and efficient web application host your applications need.
 
 ## Server Information : ##
-  > * Public IP Address : `18.184.55.216`
+  > * Public IP Address : `18.185.105.26`
+  > * Private IP Address : `172.26.10.157`
   > * Accessible SSH Port : `2200`
   > * Root user-name : `ubuntu`
   > * SSH user-name : `grader`
@@ -107,7 +108,7 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
 * Install Python3 
   > `sudo apt-get install python3`
 * Install pip3 
-  > `sudo apt*get install Python3-pip`
+  > `sudo apt-get install Python3-pip`
 * Install dependencies
   > * ` sudo pip3 install httplib2`
   > * ` sudo pip3 install requests`
@@ -121,7 +122,7 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
 * Add the following to `000-default.conf` file
   > ````sql
   > <VirtualHost *:80>
-  >          ServerName 172.26.15.197
+  >          ServerName 172.26.10.157
   >          WSGIScriptAlias / /var/www/Item-Catalog/Itam-Catalog.wsgi
   >          <Directory /var/www/Item-Catalog/>
   >                Order allow,deny
@@ -139,8 +140,12 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
   >          CustomLog ${APACHE_LOG_DIR}/access.log combined
   > </VirtualHost>
  * Reload Apache Server
-  > `sudo service apahce2 reload`
+  > `sudo service apahce2 restart`
  * Run `database_setup.py`
   > `python3 database_setup.py`
  * Restart Apache Server
   > `sudo service apache2 restart`
+  ## References :
+  > * [AWS Lightsail](https://lightsail.aws.amazon.com)
+  > * [SSH: How to access a remote server and edit files](https://www.youtube.com/watch?v=HcwK8IWc-a8)
+  > * [Deploying a Flask App with Heroku](https://www.youtube.com/watch?v=5UNAy4GzQ5E)
