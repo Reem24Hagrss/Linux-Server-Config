@@ -27,6 +27,8 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
 * Download the Private Key of the instance 
 * Save the key as key.rsa in the working directory
 * Open terminal in the working directory
+* Craete `.ssh` directory
+  > `sudo mkdir .ssh`
 * Move the key to the `~/.ssh` directory 
   > `sudo mv key.rsa ~/.ssh`
 * Connect to the instance
@@ -103,7 +105,7 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
   > with open(activate_this) as file_:
   > exec(file_.read(), dict(__file__=activate_this))
   > sys.path.insert(0,"/var/www/Item-Catalog/")
-  > from __init__ import app as application
+  > from project import app as application
   > ````
 * Install Python3 
   > `sudo apt-get install python3`
