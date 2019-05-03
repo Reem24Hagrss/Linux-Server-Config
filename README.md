@@ -88,26 +88,31 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
 ### 8- Deploy the Item Catalog project
 * Change directory
   > `cd /var/www`
+* Create directory `FlaskApp  
+  > `sudo mkdir FlaskApp`
+* Chande directory to FlaskApp
+  > `cd FlaskApp`
 * Clone Item Catalog project repository
-  > sudo git clone https://github.com/Reem24Hagrss/Item-Catalog.git
+  > sudo git clone https://github.com/Reem24Hagrss/Item-Catalog.git ItemCatalog
 * Change ownership of `catalog` directory to ubuntu user
   > `sudo chown -R ubuntu:ubuntu Item-Catalog/`
-* Change current directory to project directory
-  > `cd Item-Catalog`
-* Create `Item-Catalog.wsgi` file using nano
-  > `sudo nano Item-Catalog.wsgi`
+* Create `itemcatalog.wsgi` file using nano
+  > `sudo nano itemcatalog.wsgi`
 * Add the following into the file created
   > ````sql
-  > #!/usr/bin/python3
+  > #!/usr/bin/python
   > import sys
-  > sys.stdout = sys.stderr
-  > activate_this = '/var/www/Item-Catalog/env/bin/activate_this.py'
-  > with open(activate_this) as file_:
-  > exec(file_.read(), dict(__file__=activate_this))
-  > sys.path.insert(0,"/var/www/Item-Catalog/")
-  > from project import app as application
+  > import logging
+  > logging.basicConfig(stream=sys.stderr)
+  > sys.path.insert(0,"/var/www/FlaskApp/")
+  > from ItemCatalog import app as application
+  > application.secret_key = 'Add your secret key'
   > ````
-* Install Python3 
+* Change directory to ItemCatalog
+  > `cd ItemCatalog`
+* Change name `project.py` to `__init__.py`
+  > `sudo mv project.py __init__.py
+* Install Python3
   > `sudo apt-get install python3`
 * Install pip3 
   > `sudo apt-get install Python3-pip`
@@ -124,22 +129,20 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
 * Add the following to `000-default.conf` file
   > ````sql
   > <VirtualHost *:80>
-  >          ServerName 172.26.10.157
-  >          WSGIScriptAlias / /var/www/Item-Catalog/Itam-Catalog.wsgi
-  >          <Directory /var/www/Item-Catalog/>
-  >                Order allow,deny
-  >                Allow from all
-  >                Options -Indexes
-  >          </Directory>
-  >          Alias /static /var/www/Item-Catalog/static
-  >          <Directory /var/www/Item-Catalog/static/>
-  >                Order allow,deny
-  >                Allow from all
-  >                Options -Indexes
-  >          </Directory>
-  >          ErrorLog ${APACHE_LOG_DIR}/error.log
-  >          LogLevel warn
-  >          CustomLog ${APACHE_LOG_DIR}/access.log combined
+  >              ServerName http://18.185.105.26/
+  >              WSGIScriptAlias / /var/www/FlaskApp/itemcatalog.wsgi
+  >              <Directory /var/www/FlaskApp/ItemCatalog/>
+  >                      Order allow,deny
+  >                      Allow from all
+  >              </Directory>
+  >              Alias /static /var/www/FlaskApp/ItemCatalog/static
+  >              <Directory /var/www/FlaskApp/ItemCatalog/static/>
+  >                      Order allow,deny
+  >                      Allow from all
+  >              </Directory>
+  >              ErrorLog ${APACHE_LOG_DIR}/error.log
+  >             LogLevel warn
+  >              CustomLog ${APACHE_LOG_DIR}/access.log combined
   > </VirtualHost>
  * Reload Apache Server
   > `sudo service apahce2 restart`
