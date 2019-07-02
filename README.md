@@ -8,8 +8,8 @@ By the end of this project, you will have one of your web applications running l
 In this project, you’ll be responsible for turning a brand-new, bare bones, Linux server into the secure and efficient web application host your applications need.
 
 ## Server Information : ##
-  > * Public IP Address : `18.185.105.26`
-  > * Private IP Address : `172.26.10.157`
+  > * Public IP Address : `3.9.115.57`
+  > * Private IP Address : `172.26.5.139`
   > * Accessible SSH Port : `2200`
   > * Root user-name : `ubuntu`
   > * SSH user-name : `grader`
