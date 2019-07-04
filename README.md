@@ -8,8 +8,8 @@ By the end of this project, you will have one of your web applications running l
 In this project, you’ll be responsible for turning a brand-new, bare bones, Linux server into the secure and efficient web application host your applications need.
 
 ## Server Information : ##
-  > * Public IP Address : `3.9.115.57`
-  > * Private IP Address : `172.26.5.139`
+  > * Public IP Address : `3.8.140.214`
+  > * Private IP Address : `172.26.7.156`
   > * Accessible SSH Port : `2200`
   > * Root user-name : `ubuntu`
   > * SSH user-name : `grader`
@@ -111,7 +111,7 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
 * Change directory to ItemCatalog
   > `cd ItemCatalog`
 * Change name `project.py` to `__init__.py`
-  > `sudo mv project.py __init__.py
+  > `sudo mv project.py __init__.py`
 * Install Python3
   > `sudo apt-get install python3`
 * Install pip3 
@@ -129,7 +129,7 @@ In this project, you’ll be responsible for turning a brand-new, bare bones, Li
 * Add the following to `000-default.conf` file
   > ````sql
   > <VirtualHost *:80>
-  >              ServerName http://18.185.105.26/
+  >              ServerName http://3.8.140.214/
   >              WSGIScriptAlias / /var/www/FlaskApp/itemcatalog.wsgi
   >              <Directory /var/www/FlaskApp/ItemCatalog/>
   >                      Order allow,deny
